@@ -2,18 +2,18 @@ version: "3"
 services:
   web:
     build:
-      context: .
-      dockerfile: Dockerfile.dev
+      context: . #在當下資料夾找
+      dockerfile: Dockerfile.dev #找dockerfile等同於此檔名的檔案且build
     ports:
       - "3000:3000"
     volumes:
       - /app/node_modules
       - .:/app
-  test:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    volumes: #reference the file
-      - /app/node_modules
-      - .:/app
-    command: ["npm", "run", "test"] #Override defualt command
+  # test:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.dev
+  #   volumes: #reference the file
+  #     - /app/node_modules
+  #     - .:/app
+  #   command: ["npm", "run", "test"] #Override defualt command
