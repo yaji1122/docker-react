@@ -2,8 +2,21 @@ sudo: required
 services:
   - docker
 
-before_install:
+before_install: #Mean before run the script that you want to install
   - docker build -t yaji/docker-react -f Dockerfile.dev .
 
-script:
+script: #
   - docker run -e CI=true yaji/docker-react npm run test
+
+deploy:
+  provider: elasticbeanstalk #AWS Elastic Beantalk
+  region: "ap-northeast-1" #Application Region
+  app: "docker" # Application Name
+  env: "Docker-env" # Application Env name
+  bucket_name: "elasticbeanstalk-ap-northeast-1-059424882084" # AWS S3
+  bucket_path: "docker" # normally same as application name
+  on: #This tell travis CI that only the master branch has new commit to deploy
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
