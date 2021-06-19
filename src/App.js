@@ -6,14 +6,14 @@ function App() {
 		<div className="App">
 			<header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />
-				<p>Now we use docker compose up to run this container</p>
+				<p>Hello Jessie Hsu !!!</p>
 				<a
 					className="App-link"
 					href="https://reactjs.org"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					Learn React
+					learn react
 				</a>
 			</header>
 		</div>
