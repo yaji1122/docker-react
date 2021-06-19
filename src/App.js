@@ -6,7 +6,7 @@ function App() {
 		<div className="App">
 			<header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />
-				<p>it response at the same time when I save</p>
+				<p>Now we use docker compose up to run this container</p>
 				<a
 					className="App-link"
 					href="https://reactjs.org"
